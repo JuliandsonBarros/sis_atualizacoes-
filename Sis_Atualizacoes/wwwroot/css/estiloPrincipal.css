@@ -11,16 +11,12 @@ body {
     padding: 0;
 }
 
-.navbar {
-    width: 100%;
-    background-color: #526D82;
-}
-
 .sidebar {
     background-color: #526D82;
     height: 100vh;
     padding: 0;
     color: white;
+    width: 25%;
 }
 
 .main-content {
@@ -30,8 +26,8 @@ body {
 #content {
     background-color: #ddd;
     padding: 20px;
-    width: calc(100% - 25%);
-    margin-left: 25%;
+    width: 75%; 
+    margin-left: 25%; 
     transition: all 0.4s;
 }
 
@@ -102,6 +98,11 @@ body {
     margin-right: 2%;
 }
 
+.main-content-container {
+    margin-left: 320px; 
+    transition: margin-left 0.4s;
+}
+
 .cor {
     color: #526D82;
 }
@@ -141,6 +142,21 @@ body {
 }
 
 @media (max-width: 1200px) {
+
+    .main-content-container {
+        margin-left: 30%; 
+    }
+}
+
+    .sidebar {
+        width: 30%; 
+    }
+
+    #content {
+        margin-left: 30%;
+        width: 70%;
+    }
+
     .responsividade {
         width: 30%;
     }
@@ -188,4 +204,8 @@ body {
     .calendar-container {
         width: 100%;
     }
+}
+
+.card-principal {
+    width: auto; 
 }

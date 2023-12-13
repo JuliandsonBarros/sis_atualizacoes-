@@ -1,24 +1,187 @@
-﻿@model Sis_Atualizacoes.Models.Projetos
+﻿@model ProjetoListViewModel
 
-@{
-    ViewData["Title"] = "Details";
-}
+<div class="container" style="margin-left: 420px; padding: 20px;">
+    <div class="row">
+        <div class="col-md-12">
 
-<h1>Details</h1>
+            <div class="card card-principal" style="width: auto;">
+                <div class="card-body">
+                    <h5 class="card-title" id="project-title-display">@Model.Projeto</h5>
 
-<div>
-    <h4>Projetos</h4>
-    <hr />
-    <dl class="row">
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.NomProjeto)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.NomProjeto)
-        </dd>
-    </dl>
+                    <div class="form-group row">
+                        <div class="col-md-6">
+                            <label>Projeto: </label>
+                            <p type="text" class="form-control info-principal2" id="project-version-display">@Model.Projeto.NomProjeto);</p>
+                        </div>
+
+
+                        <div id="uploaded-file-info" style="display: none;">
+                            <p class="info-principal" id="uploaded-file-name">Nome do Arquivo: --</p>
+                            <a href="#" id="download-file-link"></a>
+                        </div>
+
+                        <div class="d-inline-flex p-2" ">
+                            <a href="download_link" class="btn btn-secondary btn-sm mr-1 " style="width: 25%; height: 8%; margin-top: 2%;">Download</a>
+                            <button type="button" class="btn btn-primary ml-1" style="width: 25%; height: 8%; margin-top: 2%;" data-toggle="modal" data-target="#projectModal">
+                                Salvar Atualização
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+                        @foreach (var sub in Model.Pacote)
+                        {
+                <table class="table" style="width: auto; margin-top: 10%">
+                    <thead>
+                        <tr>
+                            <th scope="col">Versão</th>
+                            <th scope="col">Data de Lançamento</th>
+                            <th scope="col">Registro de Alterações</th>
+                            <th scope="col">Nome do Arquivo</th>
+                            <th scope="col">Ações</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>@sub.NumVersao</td>
+                            <td>@sub.DtLancamento</td>
+                            <td>@sub.RegistroAlteracoes</td>
+                            <td id="uploaded-file-name-atualizacao">--</td>
+                            <td>
+                                <a href="download_link" class="btn btn-secondary btn-sm mr-1">Download</a>
+                                <button type="button" class="btn btn-primary ml-1" data-toggle="modal" data-target="#projectModal2">Salvar Atualização</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+
+
+                        }
+
+
+        </div>
+    </div>
+    <!--modal fade-->
+    <div class="modal fade" id="projectModal" tabindex="-1" role="dialog" aria-labelledby="projectModalLabel" aria-hidden="true" 1>
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="projectModalLabel">Incluir novo prjeto</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="form-group">
+                            <label for="project-title">Título do Projeto</label>
+                            <input type="text" class="form-control" id="project-title" placeholder="Digite o título">
+                        </div>
+                        <div class="form-group">
+                            <label for="project-version">Número da Versão</label>
+                            <input type="text" class="form-control" id="project-version" placeholder="Digite o número da versão">
+                        </div>
+                        <div class="form-group">
+                            <label for="project-date">Data de Inserção</label>
+                            <input type="datetime-local" class="form-control" id="project-date">
+                        </div>
+                        <div class="form-group">
+                            <label for="project-description">Descrição do Projeto</label>
+                            <textarea class="form-control" id="project-description" rows="3"></textarea>
+                        </div>
+                    </form>
+                </div>
+                <div class="form-group ml-3">
+                    <label for="project-file">Selecionar Arquivo: </label>
+                    <input type="file" class="form-control-file" id="project-file">
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary">Salvar Alterações: </button>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--modal -->
+    <div class="modal fade" id="projectModal2" tabindex="-1" role="dialog" aria-labelledby="projectModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="projectModalLabel">Salvar</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <!-- Formulário para cadastro/alteração -->
+                    <form>
+                        <div class="form-group">
+                            <label for="project-title">Título do Projeto: </label>
+                            <input type="text" class="form-control" id="project-title" placeholder="Digite o título">
+                        </div>
+                        <div class="form-group">
+                            <label for="project-version">Número da Versão: </label>
+                            <input type="text" class="form-control" id="project-version" placeholder="Digite o número da versão">
+                        </div>
+                        <div class="form-group">
+                            <label for="project-date">Data de Inserção: </label>
+                            <input type="datetime-local" class="form-control" id="project-date">
+                        </div>
+                        <div class="form-group">
+                            <label for="project-description">Descrição do Projeto: </label>
+                            <textarea class="form-control" id="project-description" rows="3"></textarea>
+                        </div>
+                        <!-- Outros campos conforme necessário -->
+                    </form>
+                </div>
+                <div class="form-group ml-3">
+                    <label for="project-file-atualizacao">Selecionar Arquivo: </label>
+                    <input type="file" class="form-control-file" id="project-file-atualizacao">
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary">Salvar Alterações</button>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
-<div>
-    <a asp-action="Edit" asp-route-id="@Model?.IdProjeto">Edit</a> |
-    <a asp-action="Index">Back to List</a>
-</div>
+
+<script>
+    document.getElementById('project-file').addEventListener('change', function () {
+        var fileInput = document.getElementById('project-file');
+        var fileInfoContainer = document.getElementById('uploaded-file-info');
+        var fileNameDisplay = document.getElementById('uploaded-file-name');
+        var downloadLink = document.getElementById('download-file-link');
+
+        if (fileInput.files.length > 0) {
+            var fileName = fileInput.files[0].name;
+            fileNameDisplay.textContent = 'Nome do Arquivo: ' + fileName;
+
+
+            fileInfoContainer.style.display = 'block';
+        }
+    });
+
+
+    document.getElementById('project-file-atualizacao').addEventListener('change', function () {
+        var fileInput = document.getElementById('project-file-atualizacao');
+        var fileInfoContainer = document.getElementById('uploaded-file-info-atualizacao');
+        var fileNameDisplay = document.getElementById('uploaded-file-name-atualizacao');
+        var downloadLink = document.getElementById('download-file-link-atualizacao');
+
+        if (fileInput.files.length > 0) {
+            var fileName = fileInput.files[0].name;
+            fileNameDisplay.textContent = 'Nome do Arquivo: ' + fileName;
+
+
+            fileInfoContainer.style.display = 'block';
+        }
+    });
+</script>
+
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>

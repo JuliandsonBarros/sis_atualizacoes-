@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using Sis_Atualizacoes.Models;
+using Sis_Atualizacoes.ViewModels;
 
 namespace Sis_Atualizacoes.Controllers
 {
@@ -34,14 +35,28 @@ namespace Sis_Atualizacoes.Controllers
                 return NotFound();
             }
 
-            var projetos = await _context.Projetos
-                .FirstOrDefaultAsync(m => m.IdProjeto == id);
-            if (projetos == null)
+            var projeto = await _context.Projetos.FirstOrDefaultAsync(p => p.IdProjeto == id);
+            if (projeto == null)
             {
                 return NotFound();
             }
 
-            return View(projetos);
+            var pacotes = await _context.PacotesAtualizacoes
+                            .Where(p => p.IdProj == id) 
+                            .ToListAsync();
+
+            if (pacotes == null)
+            {
+                return NotFound();
+            }
+
+            var projetoListViewModel = new ProjetoListViewModel
+            {
+                Projeto = projeto,
+                Pacote = pacotes
+            };
+
+            return View(projetoListViewModel);
         }
 
         // GET: Projetos/Create

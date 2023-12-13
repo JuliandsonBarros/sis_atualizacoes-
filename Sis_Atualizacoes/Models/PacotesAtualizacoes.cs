@@ -12,7 +12,9 @@ namespace Sis_Atualizacoes.Models
         [Key]
         [Column("Id_Pacote")]
         public int IdPacote { get; set; }
+        
         [Column("Id_Proj")]
+        [ForeignKey(nameof(IdProj))]
         public int? IdProj { get; set; }
         [Column("Num_Versao")]
         [StringLength(30)]

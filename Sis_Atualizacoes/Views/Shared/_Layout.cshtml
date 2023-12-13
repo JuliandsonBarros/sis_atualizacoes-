@@ -7,59 +7,37 @@
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/estiloPrincipal.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/css/cards.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/projetoDetails.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/Sis_Atualizacoes.styles.css" asp-append-version="true" />
 </head>
-<body style="background-color:white">
-    <!--<header>
-         <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
-             <div class="container-fluid">
-                 <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">Sis_Atualizacoes</a>
-                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
-                         aria-expanded="false" aria-label="Toggle navigation">
-                     <span class="navbar-toggler-icon"></span>
-                 </button>
-                 <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
-                     <ul class="navbar-nav flex-grow-1">
-                         <li class="nav-item">
-                             <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
-                         </li>
-                         <li class="nav-item">
-                             <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
-                         </li>
-                     </ul>
-                 </div>
-             </div>
-         </nav>
-     </header>-->
-    <!-- <section class="navbar navbar-expand-lg p-0 mr-0" style="width: 100%;">
-        <div >
-            <div class="container-fluid">
+<body>
+    <section class="navbar-expand-lg p-0 mr-0">
+        <div class="container-fluid">
             <div class="container">
-            <div class="row">
-                 <div class="sidebar col-xl-3 fixed-top  py-3 responsividade" id="fixo" style="margin-top: 5%;">
-                    <ul class="navbar-nav flex-column ajuste-ul-sidebar" id="rolavel" >
-                        <li class="nav-item ">
-                            <a href="" class="nav-link text-white sidebar-link caixa__alta">Argus</a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="/" class="nav-link text-white sidebar-link caixa__alta">Simba</a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="" class="nav-link text-white sidebar-link caixa__alta">Sittel</a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="" class="nav-link text-white sidebar-link caixa__alta">PAI</a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="" class="nav-link text-white sidebar-link caixa__alta">Passaport</a>
-                        </li>
-                    </ul>
-                 </div>
+                <div class="row">
+                    <div class="sidebar col-xl-3 fixed-top  py-3 responsividade" id="fixo" style="margin-top: 10%;">
+                        <ul class="navbar-nav flex-column ajuste-ul-sidebar" id="rolavel">
+                            <li class="nav-item ">
+                                <a class="nav-link text-white sidebar-link caixa__alta" asp-controller="Projetos" asp-action="Details" asp-route-id="1">Argus</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="#" class="nav-link text-white sidebar-link caixa__alta">Simba</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="#" class="nav-link text-white sidebar-link caixa__alta">Sittel</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="#" class="nav-link text-white sidebar-link caixa__alta">PAI</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="#" class="nav-link text-white sidebar-link caixa__alta">Passaport</a>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
-              </div>
             </div>
         </div>
-    </section>-->
+    </section>
     <nav class="bg-dark fixed-top  main-content">
         <ul class="d-flex bd-highlight mb-0 ajuste-ul-nav">
             <!--<i class="fa-solid fa-bars fa-xl text-white mt-4 menu-toggler" ></i>-->
@@ -73,12 +51,12 @@
                     </div>
             </li>
             <li class="nav-ajuste-cepadsi" style="padding-right: 13%; padding-bottom: 20px;">
-                <h1 class=" text-white d-block mx-auto text-center pl-2 mb-2  caixa__alta" style="padding-bottom: 9.3%;  margin-top: 6%;">Atualizações</h1>
+                <h1 class=" text-white d-block mx-auto text-center pl-2 mb-2  caixa__alta" style="padding-bottom: 9.3%;  margin-top: 6%;">SisAt</h1>
             </li>
             <li class=" mr-auto p-3 bd-highlight text-white nav-ajuste intranet-none" style="margin-left: 1%;">
                 </i><h6><strong>SPAI - sistema de atualizações </strong>| Mantenha todas aplicaçoes atualizadas</h6>
             </li>
-           
+
             <li class="p-2  text-white pr-4 nav-ajuste ml-5">
 
                 <i class="fa-sharp fa-solid fa-building-columns pr-1"></i>
@@ -90,152 +68,9 @@
             </li>
         </ul>
     </nav>
-    <main class="pr-3 pl-3">
-        <section class="flex-container card-principal">
-            <div class="row ">
-                <div class="col-2">
-                    <div class="card text-dark bg-light mb-3 espaco-cards" style="max-width: 18rem;">
-                        <div class="card-header">Header</div>
-                        <div class="card-body">
-                            <h5 class="card-title">Light card title</h5>
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-2">
-                    <div class="card text-dark bg-light mb-3 espaco-cards" style="max-width: 18rem;">
-                        <div class="card-header">Header</div>
-                        <div class="card-body">
-                            <h5 class="card-title">Light card title</h5>
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                        </div>
-                    </div>
-                </div>
 
-                <div class="col-2">
-                    <div class="card text-dark bg-light mb-3 espaco-cards" style="max-width: 18rem;">
-                        <div class="card-header">Header</div>
-                        <div class="card-body">
-                            <h5 class="card-title">Light card title</h5>
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                        </div>
-                    </div>
-                </div>
 
-                <div class="col-2">
-                    <div class="card text-dark bg-light mb-3 espaco-cards" style="max-width: 18rem;">
-                        <div class="card-header">Header</div>
-                        <div class="card-body">
-                            <h5 class="card-title">Light card title</h5>
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-2">  
-                    <div class="card text-dark bg-light mb-3 espaco-cards" style="max-width: 18rem;">
-                        <div class="card-header">Header</div>
-                        <div class="card-body">
-                            <h5 class="card-title">Light card title</h5>
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-2">
-                 <div class="card text-dark bg-light mb-3 espaco-cards" style="max-width: 18rem;">
-                        <div class="card-header">Header</div>
-                        <div class="card-body">
-                            <h5 class="card-title">Light card title</h5>
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-2">
-                    <div class="card text-dark bg-light mb-3 espaco-cards" style="max-width: 18rem;">
-                        <div class="card-header">Header</div>
-                        <div class="card-body">
-                            <h5 class="card-title">Light card title</h5>
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-2">
-                    <div class="card text-dark bg-light mb-3 espaco-cards" style="max-width: 18rem;">
-                        <div class="card-header">Header</div>
-                        <div class="card-body">
-                            <h5 class="card-title">Light card title</h5>
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-2">
-                    <div class="card text-dark bg-light mb-3 espaco-cards" style="max-width: 18rem;">
-                        <div class="card-header">Header</div>
-                        <div class="card-body">
-                            <h5 class="card-title">Light card title</h5>
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-2">
-                   <div class="card text-dark bg-light mb-3 espaco-cards" style="max-width: 18rem;">
-                        <div class="card-header">Header</div>
-                        <div class="card-body">
-                            <h5 class="card-title">Light card title</h5>
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                        </div>
-                    </div> 
-                </div>
-                <div class="col-2">
-                    <div class="card text-dark bg-light mb-3 espaco-cards" style="max-width: 18rem;">
-                        <div class="card-header">Header</div>
-                        <div class="card-body">
-                            <h5 class="card-title">Light card title</h5>
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-2">
-                    <div class="card text-dark bg-light mb-3 espaco-cards" style="max-width: 18rem;">
-                        <div class="card-header">Header</div>
-                        <div class="card-body">
-                            <h5 class="card-title">Light card title</h5>
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-2">
-                    <div class="card text-dark bg-light mb-3 espaco-cards" style="max-width: 18rem;">
-                        <div class="card-header">Header</div>
-                        <div class="card-body">
-                            <h5 class="card-title">Light card title</h5>
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-2">
-                    <div class="card text-dark bg-light mb-3 espaco-cards" style="max-width: 18rem;">
-                        <div class="card-header">Header</div>
-                        <div class="card-body">
-                            <h5 class="card-title">Light card title</h5>
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-                
-        </section>
-    </main>
-
-    <div class="container">
+    <div class="container main-content-container">
         <main role="main" class="pb-3">
             @RenderBody()
         </main>

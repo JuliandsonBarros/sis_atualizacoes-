@@ -11053,19 +11053,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\juliandson.soares\\.nuget\\packages\\": {}
+    "C:\\Users\\Lenovo\\.nuget\\packages\\": {},
+    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\juliandson.soares\\Documents\\workspace\\Sis_Atualizacoes\\Sis_Atualizacoes\\Sis_Atualizacoes.csproj",
+      "projectUniqueName": "C:\\Users\\Lenovo\\Documents\\workspace\\sis_atualizacoes-\\Sis_Atualizacoes\\Sis_Atualizacoes.csproj",
       "projectName": "Sis_Atualizacoes",
-      "projectPath": "C:\\Users\\juliandson.soares\\Documents\\workspace\\Sis_Atualizacoes\\Sis_Atualizacoes\\Sis_Atualizacoes.csproj",
-      "packagesPath": "C:\\Users\\juliandson.soares\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\juliandson.soares\\Documents\\workspace\\Sis_Atualizacoes\\Sis_Atualizacoes\\obj\\",
+      "projectPath": "C:\\Users\\Lenovo\\Documents\\workspace\\sis_atualizacoes-\\Sis_Atualizacoes\\Sis_Atualizacoes.csproj",
+      "packagesPath": "C:\\Users\\Lenovo\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Lenovo\\Documents\\workspace\\sis_atualizacoes-\\Sis_Atualizacoes\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+      ],
       "configFilePaths": [
-        "C:\\Users\\juliandson.soares\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Lenovo\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -11129,7 +11133,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.402\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.400\\RuntimeIdentifierGraph.json"
       }
     }
   }

@@ -1,14 +1,6 @@
 ﻿
 .card-principal {
-    margin-top: 8%;
+    margin: auto; /* Centraliza horizontalmente */
+    max-width: 800px; /* Ou qualquer largura máxima desejada */
+    /* Outros estilos existentes aqui... */
 }
-
-.espaco-cards {
-    margin-right: 2%;
-}
-
-.card-grid {
-
-    display:inline-flex;
-}
-

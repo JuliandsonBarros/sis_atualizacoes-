@@ -1,0 +1,66 @@
+﻿.table {
+    margin: auto;
+    max-width: 280px; /* Ajuste de acordo com o tamanho desejado */
+}
+
+.info-field {
+    margin-bottom: 10px;
+}
+
+.btn-secondary {
+    margin-top: 10px;
+}
+
+
+.btn-primary, .btn-secondary {
+    font-size: 0.9em;
+}
+
+
+.info-field {
+    margin-bottom: 10px;
+}
+
+.card-principal {
+    margin: auto; /* Centraliza horizontalmente */
+    max-width: 280px; /* Ou qualquer largura máxima desejada */
+    /* Outros estilos existentes aqui... */
+}
+
+
+.info-principal {
+    font-size: 0.9em;
+    color: #333;
+    margin-top: 5px;
+}
+
+
+
+.info-principal2 {
+    margin-bottom: 10px;
+    width: 100%;
+}
+
+.card-text {
+    margin-top: 10px;
+    width: 100%;
+}
+
+#uploaded-project-details {
+    margin-top: 20px;
+    background-color: #f2f2f2;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.form-group label {
+    font-weight: bold;
+}
+
+.card-body {
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    height: 40%;
+}
